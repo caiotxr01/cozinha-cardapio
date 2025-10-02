@@ -1,83 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="sistema.css">
 </head>
 
 <body>
-    <header>
-        <h1>sistema cozinha </h1>
-        <button>sair</button>
-    </header>
-    <main>
-        <h2>lista de cardapio</h2>
+  <header>
+    <h1>Sistema Cozinha</h1>
+    <button type="submit" value="sair">Sair</button>
+  </header>
+  <main>
+    <div>
+      <section class="tabela">
+        <h3>Lista de Cardapio</h3>
         <table>
-            <tr>
-                <th>turno</th>
-                <th>data</th>
-                <th>refeicao</th>
-            </tr>
-            <tr>
-                <td>manha</td>
-                <td>22/09/25</td>
-                <td>almoco</td>
-            </tr>
-            <tr>
-                <td>tarde</td>
-                <td>22/09/25</td>
-                <td>almoco</td>
-            </tr>
-            <tr>
-                <td>noite</td>
-                <td>22/09/25</td>
-                <td>janta</td>
-            </tr>
-            <tr>
-                <td>integral</td>
-                <td>22/09/25</td>
-                <td>lanche</td>
-            </tr>
+          <tr>
+            <th>Turno</th>
+            <th>Data</th>
+            <th>Refeição</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+          </tr>
+          <tr>
+            <td>Manhã</td>
+            <td>22/09/2025</td>
+            <td>Almoço</td>
+            <td>✏️</td>
+            <td>🗑️</td>
+          </tr>
+          <tr>
+            <td>Tarde</td>
+            <td>22/09/2025</td>
+            <td>Almoço</td>
+            <td>✏️</td>
+            <td>🗑️</td>
+          </tr>
+          <tr>
+            <td>Noite</td>
+            <td>22/09/2025</td>
+            <td>Jantar</td>
+            <td>✏️</td>
+            <td>🗑️</td>
+          </tr>
+          <tr>
+            <td>Integral</td>
+            <td>22/09/2025</td>
+            <td>Lanche</td>
+            <td>✏️</td>
+            <td>🗑️</td>
+
+
         </table>
-        <br><br>
-        
-        <h2>fale conosco</h2>
-        
 
 
-        <select name="assunto" id="assunto">
-            <option value="" selected disabled>escolha um assunto</option>
-            <option value="reclamacoes">reclamacoes</option>
-            <option value="solucoes">solucoes</option>
-            <option value="sugentoes">sugentoes</option>
-        </select><br><br>
-        <input type="text" name="escreva aqui" placeholder="escreva aqui"><br>
-        <button>enviar</button>
-
-
-
-
-        <h2>cadastrar prato</h2>
-        <input type="number" name="data" placeholder="data"><br>
-        <input type="text" name="turno" placeholder="turno"><br>
-
-
-        <h2>refeicao</h2>
-        <input type="text" name="titulo" placeholder="titulo"><br>
-        <input type="text" name="itens" placeholder="itens"><br>
-        <input type="text" name="bebida" placeholder="bebida"><br>
-
-
-        <button>inserir img</button><br><br>
-        <button>cadastrar</button>
-
-
-    </main>
-
-
+      </section>
+      <section class="conosco">
+        <div class="h3">
+          <h3>Fale Conosco</h3>
+        </div>
+        <div class="opcao">
+          <div>
+            <select name="" id="">
+              <option value="">Escolha uma opção</option>
+            <option value="reclamacao">Reclamação</option>
+            <option value="sugestao">Sugestão</option>
+            <option value="elogio">Elogio</option>
+            <option value="outro">Outro</option>
+          </select><br> <!--  Vamos copiar do codigo original -->
+          <textarea name="opiniao" id="opiniao" placeholder="Digite sua opinião aqui..."
+          disabled="disabled"></textarea><br>
+        </div>
+          <button type="submit" value="enviar">Enviar</button>
+        </div>
+      </section>
+    </div>
+    <aside>
+      <h3>Cadastrar Prato</h3>
+      <form action="">
+        <input type="date" name="data" id="data"><br>
+        <select name="turno" id="turno">
+          <option value="manha">Manhã</option>
+          <option value="tarde">Tarde</option>
+          <option value="noite">Noite</option>
+          <option value="integral">Integral</option>
+        </select><br>
+        <input type="text" placeholder="titulo"><br>
+        <textarea name="itens" id="itens" placeholder="Itens"></textarea><br>
+        <input type="text" name="bebida" id="bebida" placeholder="Bebida"><br>
+        <button type="submit">inserir img</button><br>
+        <button type="submit" value="cadastrar">Cadastrar</button>
+    </aside>
+  </main>
+  <footer>
+    <p><span>Desenvolvido: Caio Teixeira</span></p>
+  </footer>
 </body>
 
 </html>
