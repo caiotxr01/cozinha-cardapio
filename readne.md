@@ -60,7 +60,7 @@ cozinha-cardapio/
    ```
 
 3. **Abra o arquivo `index.html`** no seu navegador.
-   O sistema é totalmente local — não precisa de servidor.
+   O sistema é totalmente local — não precisa de servidor.s
 
 ---
 
