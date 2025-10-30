@@ -1,0 +1,22 @@
+export function mostraMsg(msg,cor="black",duracao=5000){
+    //limpar mensagem antiga
+    const msgAntiga=document.querySelectorAll(".msg-sistema");
+    msgAntiga.forEach(m=>m.remove());
+    const msgDiv=document.createElement("div");
+    msgDiv.clossList.add('msg-sistema');
+    msgDiv.textContent=msg;
+    msgDiv.style.color=cor;
+    msgDiv.style.padding="10px";
+    msgDiv.style.borderRadius="spx";
+    msgDiv.style.textAlign="center";
+    msgDiv.style.marginTop="15px";
+    msgDiv.style.fontWeight="bold";
+    msgDiv.style.backgroundColor=cor==="red"?"#fe0e0e":"#e0ffe0";
+    msgDiv.style.transition="opacity 0.3s ease";
+    msgDiv.style.opacity="1";
+    document.body.appendChild(msgAntiga);
+    setTimeout(()=>{
+        msgDiv.style.apacity="0";
+        setTimeout(()=>msgDiv.remove(),300);
+    },duracao)
+}
