@@ -10,27 +10,32 @@
 
 <body>
     <h3>cadastrar usuario </h3>
-    <fieldset>
-        <legend>nome:</legend>
-        <input type="texte" name="nome"  id=""><br>
+    <form id="formCadastrar">
 
-    </fieldset>
-    <fieldset>
-        <legend>E-mail:</legend>
-        <input type="email" name="email"  id=""><br>
+        <fieldset>
+            <legend>nome:</legend>
+            <input type="texte" name="nome"  id="nome"><br>
+            
+        </fieldset>
+        <fieldset>
+            <legend>E-mail:</legend>
+            <input type="email" name="email"  id="email"><br>
+            
+        </fieldset>
+        <fieldset>
+            <legend>senha:</legend>
+            <input type="password" name="senha"  id="senha"><br>
+            
+        </fieldset>
+        <fieldset>
+            <legend>Personalia:</legend>
+            <input type="password" name="confirmarSenha"  id="confirmarSenha"><br>
+            
+        </fieldset>
+        <button id="cadastrar">cadastrar</button>
+    </form>
+    <script type="module" src="./js/cadastrar.js"></script>
 
-    </fieldset>
-    <fieldset>
-        <legend>senha:</legend>
-        <input type="password" name="senha"  id=""><br>
-
-    </fieldset>
-    <fieldset>
-        <legend>Personalia:</legend>
-        <input type="password" name="confirmarSenha"  id=""><br>
-
-    </fieldset>
-    <button>cadastrar</button>
-</body>
+    </body>
 
 </html>
