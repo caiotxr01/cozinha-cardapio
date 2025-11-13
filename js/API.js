@@ -1,19 +1,7 @@
-const API_USUARIOS = "https://cozinha-sistem-1.onrender.com"
+import{tratarErroResponse,getAuthHeaders}from".utils.js"
 
-async function tratarErroResponse(res, msgPadrao) {
-    const textErro = await res.text();
-    let msgErro;
-
-    try {
-        const errorData = JSON.parse(textErro);
-        msgErro = errorData.msg || errorData.error || errorData.message || textErro;
-
-    } catch (error) {
-        msgErro = textErro;
-    }
-
-    return { sucesso: false, msg: msgErro || msgPadrao || "Erro desconhecido na API", };
-}
+const API_USUARIOS = "https://cozinha-sistem-1.onrender.com/usuarios";
+const API_CARDAPIOS ="https://cozinha-sistem-1.onrender.com/cardapios"
 
 async function loginCozinheira(email, senha) {
     try {
