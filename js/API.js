@@ -1,4 +1,4 @@
-const API_USUARIOS = "https://api-storage-cantina-main-omega.vercel.app/"
+const API_USUARIOS = "https://cozinha-sistem-1.onrender.com"
 
 async function tratarErroResponse(res, msgPadrao) {
     const textErro = await res.text();
@@ -43,7 +43,7 @@ async function loginCozinheira(email, senha) {
     }
 }
 
- async function cadastrarCozinheira(nome, email, senha) {
+async function cadastrarCozinheira(nome, email, senha) {
     try {
         const res = await fetch(API_USUARIOS + "/cadastro", {
             method: "POST",
@@ -98,8 +98,23 @@ export async function listarCardapio() {
 
 export async function alterarCardapio(id, atualizarCardapio) {
     try {
-        const res = await fetch(API_USUARIOS)
+        const res = await fetch(`API_USUARIOS/${id}`);
         const cardapios = await res.json();
+        document.querySelector("#dote").value = cardapio.data.split("T")[o];
+        document.querySelector("select#turnos").value = cardapio.turno;
+        document.querySelector("input[name='refeicao']").value = cardapio.refeicao.titulo;
+        document.querySelector("textarea[name='itens']").value = cardapio.refeicao.itens.join(",");
+        document.querySelector("input[name='bebida'").value = cardapio.refeicao.bebida.join(",");
+        if (cardapio.lache) {
+            document.querySelector("#dote").value = cardapio.data.split("T")[o];
+            document.querySelector("select#turnos").value = cardapio.turno;
+            document.querySelector("input[name='refeicao']").value = cardapio.refeicao.titulo;
+            document.querySelector("textarea[name='itens']").value = cardapio.refeicao.itens.join(",");
+            document.querySelector("input[name='bebida'").value = cardapio.refeicao.bebida.join(",");
+
+        }
+
+
         return cardapios;
     } catch (error) {
         console.error("Erro ao alterar cardapio", error);
@@ -153,11 +168,33 @@ export async function cadastrarCardapio(cardapio) {
 
 export async function loginCozinheira(email, senha) {
     try {
-         const res = await fetch(API_USUARIOS)
+        const res = await fetch(API_USUARIOS)
         const cardapios = await res.json();
         return cardapios;
     } catch (error) {
-         console.error("Erro ao cadastrar cardapio", error);
+        console.error("Erro ao cadastrar cardapio", error);
+        alert("Ocorreu um erro ao cadastrar cadápio");
+    }
+}
+
+export async function cadastrasUsuario(cardapio) {
+    try {
+        cardapio.usuarioId = Number(localStorage.getItem("usuarioId"));
+        const res = await fetch(API_USUARIOS, {
+            method: "post",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(cardapio)
+        })
+        if (res.ok) {
+            alert('Refeição cadastrarcom sucesso!');
+            listarCardapio();
+        } else {
+            alert("Erro ao cadastrar refeição")
+        }
+        const cardapios = await res.json();
+        return cardapios;
+    } catch (error) {
+        console.error("Erro ao cadastrar cardapio", error);
         alert("Ocorreu um erro ao cadastrar cadápio");
     }
 }
